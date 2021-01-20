@@ -13,6 +13,7 @@ const UnitConversionApp = () => {
             const dict = unitValues[unitsType]
             const factor = dict[outputUnits]/dict[inputUnits];
             setOutput(input * factor);
+            
         }
     }
 
@@ -33,7 +34,8 @@ const UnitConversionApp = () => {
     const handleClear = (e) => {
         e.preventDefault();
         setOutput('0');
-        setInput('');
+        document.getElementById('input-unit-conversion-app').value = "";
+        setInput('0');
     }
 
     useEffect(() => {
@@ -56,7 +58,7 @@ const UnitConversionApp = () => {
                 <button onClick={handleClear}>Clear</button>
                 <br />
                 Input:{` `}
-                <input name="input" onChange={(e) => setInput(e.target.value)} />
+                <input id="input-unit-conversion-app" name="input" onChange={(e) => setInput(e.target.value)} />
                 {` `}
                 {output && output + " " + outputUnits}
                 <br />
