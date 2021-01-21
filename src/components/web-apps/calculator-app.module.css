@@ -1,0 +1,33 @@
+.numpadUpperRow {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    height: 60px;
+}
+
+.numpadRow {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 60px;
+}
+
+.numpadInnerContainer {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
+
+.calculatorButton {
+    font-size: 20px;
+}
+
+.calculatorAppOuterContainer {
+    margin: 0 auto;
+    max-width: 450px;
+}
+
+.calculatorScreen {
+    text-align: right;
+    padding: 10px;
+    background: #efefef;
+    border: solid 1px gray;
+    font-size: 20px;
+}

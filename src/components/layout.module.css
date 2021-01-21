@@ -1,0 +1,32 @@
+.sidenav {
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    overflow-x: hidden; /* Disable horizontal scroll */
+    overflow: hidden;
+    padding-top: 10px; /* Place content 60px from the top */
+    transition: 0.2s; /* 0.5 second transition effect to slide in the sidenav */
+    text-align: center;
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: white;
+    
+}
+
+.sidenavLinks {
+    display: flex;
+    flex-direction: column;
+}
+
+.sidenavOpen {
+    width: 225px;
+}
+
+.sidenavClosed {
+    width: 0;
+}

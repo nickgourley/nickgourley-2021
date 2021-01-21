@@ -5,12 +5,13 @@ import ThemeContext from "../context/theme";
 import Navigation from "../components/navigation";
 import PageSearchForm from "./forms/page-search-form";
 
-const Header = ({ siteTitle }) => {
+const Header = ({ siteTitle, activateNav }) => {
   // const { dark, changeTheme } = useContext(ThemeContext);
 
   return (
     <header>
       <div>
+        <button onClick={activateNav}></button>
         <h1>
           <Link to="/">
             {siteTitle}
