@@ -63,7 +63,7 @@ const PageSearchForm = () => {
                     id="pageSearchInput"
                     className={PageSearchFormStyles.pageSearchInput}
                     placeholder="Search"
-                    type="text"
+                    type="search"
                     onFocus={handleSearchFocus}
                     onBlur={handleSearchFocusOut}
                     name="searchQuery"

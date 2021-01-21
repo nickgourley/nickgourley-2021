@@ -10,7 +10,7 @@ const CalculatorApp = () => {
 
 
     const handleAddition = () => {
-        const newOutput = parseInt(placeholder) + parseInt(output)
+        const newOutput = parseFloat(placeholder) + parseFloat(output)
         setOutput(newOutput);
         setOperator(null);
         setPlaceholder(newOutput);
@@ -18,7 +18,7 @@ const CalculatorApp = () => {
     }
 
     const handleSubtraction = () => {
-        const newOutput = parseInt(placeholder) - parseInt(output)
+        const newOutput = parseFloat(placeholder) - parseFloat(output)
         setOutput(newOutput);
         setOperator(null);
         setPlaceholder(newOutput);
@@ -26,7 +26,7 @@ const CalculatorApp = () => {
     }
 
     const handleMultiplication = () => {
-        const newOutput = parseInt(placeholder) * parseInt(output)
+        const newOutput = parseFloat(placeholder) * parseFloat(output)
         setOutput(newOutput);
         setOperator(null);
         setPlaceholder(newOutput);
@@ -41,7 +41,7 @@ const CalculatorApp = () => {
             setSecondNumberStarted(false);
         }
         else {
-            const newOutput = parseInt(placeholder) / parseInt(output)
+            const newOutput = parseFloat(placeholder) / parseFloat(output)
             setOutput(newOutput);
             setOperator(null);
             setPlaceholder(newOutput);
@@ -134,8 +134,6 @@ const CalculatorApp = () => {
 
     return (
         <>
-            {/* <div>operator: {operator}</div>
-            <div>placeholder: {placeholder}</div> */}
             <div className={CalculatorAppStyles.calculatorAppOuterContainer}>
             <div id="calcOutput" className={CalculatorAppStyles.calculatorScreen}>{output}</div>
             <div className={CalculatorAppStyles.numpadUpperRow}>
