@@ -1,0 +1,20 @@
+.headerContainer {
+    display: flex;
+    align-items: center;
+    background: #252525;
+    padding: 2px 5px
+}
+
+.navButton {
+}
+
+.siteTitle {
+    padding-right: 50px;
+    padding-left: 10px;
+    margin: 0;
+}
+
+.siteTitle a {
+    color: white;
+    text-decoration: none;
+}

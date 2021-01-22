@@ -2,11 +2,14 @@ import React, { useState, useEffect } from "react";
 import { unitValues } from "../../constants/unitValues";
 
 const UnitConversionApp = () => {
-    const [input, setInput] = useState('');
-    const [output, setOutput] = useState('');
     const [inputUnits, setInputUnits] = useState('km');
     const [outputUnits, setOutputUnits] = useState('km');
+    const [input, setInput] = useState('0');
+    const [output, setOutput] = useState('0');
+    
     const [unitsType, setUnitsType] = useState('length');
+    
+    const [firstRun, setFirstRun] = useState(true);
 
     const handleUnitConversion = () => {
         if(!isNaN(input)) {
@@ -32,18 +35,26 @@ const UnitConversionApp = () => {
     }
 
     const handleClear = (e) => {
-        e.preventDefault();
+        if(e) { e.preventDefault(); }
         setOutput('0');
         document.getElementById('input-unit-conversion-app').value = "";
         setInput('0');
     }
 
     useEffect(() => {
+        console.log('input')
         handleUnitConversion()
     }, [inputUnits])
 
     useEffect(() => {
-        handleUnitConversion()
+        console.log('output')
+        if(!firstRun) {
+            handleUnitConversion()
+        }
+        else {
+            setFirstRun(false);
+            handleClear();
+        }
     }, [outputUnits])
 
     

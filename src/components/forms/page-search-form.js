@@ -81,7 +81,7 @@ const PageSearchForm = () => {
                         || !focusOnSearchBox 
                         || pages.filter(page => page.title.toLowerCase().startsWith(query.toLowerCase()))
                         .map((element, id) => ( 
-                                <Link to={element.link} onMouseDown={handleLinkClick} key={id}>
+                                <Link class={PageSearchFormStyles.link} to={element.link} onMouseDown={handleLinkClick} key={id}>
                                     <div>
                                         {element.title}
                                     </div>

@@ -165,7 +165,7 @@ const CalculatorApp = () => {
                         <button onClick={handleClear} className={CalculatorAppStyles.calculatorButton}>C</button>
                     </div>
                 </div>
-                <button onClick={handleEquals}>=</button>
+                <button onClick={handleEquals} className={CalculatorAppStyles.calculatorButton}>=</button>
             </div>
             </div>
         </>

@@ -5,11 +5,11 @@
  * See: https://www.gatsbyjs.com/docs/use-static-query/
  */
 
-import React, { useState, useRef, useEffect } from "react"
-import PropTypes from "prop-types"
-import { Link, useStaticQuery, graphql } from "gatsby"
-
-import Header from "./header"
+import React, { useState, useRef, useEffect } from "react";
+import PropTypes from "prop-types";
+import { Link, useStaticQuery, graphql } from "gatsby";
+import Header from "./header";
+import "./global.css";
 import LayoutStyles from "./layout.module.css";
 
 const Layout = ({ children }) => {
@@ -52,7 +52,7 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} activateNav={activateNav} />
+      <Header siteTitle={data.site.siteMetadata?.title || `Title`} activateNav={activateNav} navActivated={navActivated} />
       <div ref={node} id="sidenav" className={[LayoutStyles.sidenav, navActivated ? LayoutStyles.sidenavOpen : LayoutStyles.sidenavClosed].join(" ")}>
           <div className={LayoutStyles.sidenavLinks}>
             <Link onClick={activateNav} to="/">Home</Link>
@@ -68,8 +68,8 @@ const Layout = ({ children }) => {
           </div>
       </div>
       <div>
-        <main>{children}</main>
-        <footer>
+        <main className={LayoutStyles.mainContainer}>{children}</main>
+        <footer className={LayoutStyles.footerContainer}>
           © {new Date().getFullYear()}, Nicholas Gourley
         </footer>
       </div>
