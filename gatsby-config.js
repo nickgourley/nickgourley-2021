@@ -11,6 +11,10 @@ module.exports = {
         title: "CV",
         link: "/cv/"
       },
+      {
+        title: "Resume",
+        link: "/cv/"
+      },
       { 
         title: "Projects",
         link: "/projects/"
@@ -27,6 +31,14 @@ module.exports = {
         title: "Unit Conversion",
         link: "/apps/unit-conversion/"
       },
+      {
+        title: "Weather Forecast",
+        link: "/apps/weather/"
+      },
+      {
+        title: "Balance Sheet",
+        link: "/apps/balance-sheet/"
+      }
     ]
   },
   plugins: [

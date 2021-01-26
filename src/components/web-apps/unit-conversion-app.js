@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { unitValues } from "../../constants/unitValues";
+import UnitConversionAppStyles from "./unit-conversion-app.module.css";
 
 const UnitConversionApp = () => {
     const [output, setOutput] = useState('0');
@@ -33,31 +34,20 @@ const UnitConversionApp = () => {
         setFactor(dict[outputUnits]/dict[inputUnits]);
     }, [inputUnits, outputUnits])
 
-
-    const handleClear = (e) => {
-        if(e) { e.preventDefault(); }
-        setInput('0');
-    }
-
     return (
         <>
-            <form>
+            <form className={UnitConversionAppStyles.container}>
                 Unit Type:{` `}
                 <select id="input-units-type" name="unitsType" onChange={handleUnitsChange}>
                     {Object.entries(unitValues).map(([key, value]) => <option key={key} value={key}>{key}</option>)}
                 </select>
-                <button onClick={handleClear}>Clear</button>
                 <br />
-                <div>Units Type: {unitsType}</div>
-                <div>Input: {input}</div>
-                <div>Output: {output}</div>
-                <div>inputUnits: {inputUnits}</div>
-                <div>outputUnits: {outputUnits}</div>
+                <div className={UnitConversionAppStyles.inputOutputContainer}>
                 Input:{` `}
                 <input id="input-unit-conversion-app" name="input" onChange={(e) => setInput(e.target.value)} />
-                {` `}
-                {output + " " + outputUnits}
-                <br />
+                <div>{` `}{"="}{` `}</div>
+                <div className={UnitConversionAppStyles.output}>{output + " " + outputUnits}</div>
+                </div>
                 From:{` `}
                 <select name="unit1" onChange={(e) => {setInputUnits(e.target.value)}}>
                     {Object.entries(unitValues[unitsType]).map(([key, value]) => <option key={key} value={key}>{key}</option>)}
@@ -66,6 +56,10 @@ const UnitConversionApp = () => {
                 <select name="unit2" onChange={(e) => setOutputUnits(e.target.value)}>
                     {Object.entries(unitValues[unitsType]).map(([key, value]) => <option key={key} value={key}>{key}</option>)}
                 </select>
+                <div>
+                    <div className={UnitConversionAppStyles.notepadTitle}>Notepad:</div>
+                    <textarea></textarea>
+                </div>
                 
             </form>
         </>
