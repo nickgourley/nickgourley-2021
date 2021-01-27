@@ -5,39 +5,53 @@ module.exports = {
     pages: [
       { 
         title: "Home",
+        displayTitle: "Page: Home",
         link: "/"
       },
       { 
         title: "CV",
+        displayTitle: "Page: CV",
         link: "/cv/"
       },
       {
         title: "Resume",
+        displayTitle: "Page: Resume",
         link: "/cv/"
       },
       { 
         title: "Projects",
+        displayTitle: "Page: Projects",
         link: "/projects/"
       },
       { 
         title: "Contact",
+        displayTitle: "Page: Contact",
         link: "/contact/"
       },
       { 
         title: "Calculator",
+        displayTitle: "App: Calculator",
         link: "/apps/calculator/"
       },
       { 
         title: "Unit Conversion",
+        displayTitle: "App: Unit Conversion",
         link: "/apps/unit-conversion/"
       },
       {
-        title: "Weather Forecast",
-        link: "/apps/weather/"
+        title: "Balance Sheet",
+        displayTitle: "App: Balance Sheet",
+        link: "/apps/balance-sheet/"
       },
       {
-        title: "Balance Sheet",
-        link: "/apps/balance-sheet/"
+        title: "Fitness Tracker",
+        displayTitle: "App: Fitness Tracker",
+        link: "/apps/fitness-tracker/"
+      },
+      {
+        title: "Notes",
+        displayTitle: "App: Notes",
+        link: "/apps/notes/"
       }
     ]
   },

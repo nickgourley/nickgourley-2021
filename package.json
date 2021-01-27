@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "chart.js": "^2.9.4",
     "firebase": "^8.2.3",
     "gatsby": "^2.26.1",
     "gatsby-image": "^2.5.0",

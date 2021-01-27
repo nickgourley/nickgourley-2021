@@ -12,6 +12,7 @@ const PageSearchForm = () => {
         siteMetadata {
           pages {
               title
+              displayTitle
               link
           } 
         }
@@ -21,21 +22,11 @@ const PageSearchForm = () => {
 
     const pages = data.site.siteMetadata.pages;
 
-    const handleSearchQuery = (e) => {
+    const handleSearchQuery = (e, element) => {
         e.preventDefault();
-        const newQuery = document.getElementById('pageSearchInput').value
-        const foundPages = pages.filter(page => page.title.toLowerCase() === newQuery.toLowerCase())
-        if(foundPages.length > 0) {
-            const link = foundPages[0].link;
-            navigate(link);
-            
+        if(element) {
+            navigate(element.link);
         }
-        else {
-            // notify user the search has no match
-            // better to notify on the same page than send to 404
-            // try tooltip
-        }
-        
     }
 
     const handleSearchFocusOut = () => {
@@ -47,11 +38,11 @@ const PageSearchForm = () => {
         setFocusOnSearchBox(true);
     }
 
-    const handleLinkClick = (e) => {
+    const handleLinkClick = (e, element) => {
         const pageSearchInput = document.getElementById('pageSearchInput');
         pageSearchInput.value = e.target.innerHTML;
         setQuery(e.target.innerHTML);
-        handleSearchQuery(e);
+        handleSearchQuery(e, element);
         handleSearchFocusOut();
     }
     
@@ -81,9 +72,9 @@ const PageSearchForm = () => {
                         || !focusOnSearchBox 
                         || pages.filter(page => page.title.toLowerCase().startsWith(query.toLowerCase()))
                         .map((element, id) => ( 
-                                <Link class={PageSearchFormStyles.link} to={element.link} onMouseDown={handleLinkClick} key={id}>
-                                    <div>
-                                        {element.title}
+                                <Link className={PageSearchFormStyles.link} to={element.link} onMouseDown={(e) => handleLinkClick(e, element)} key={id}>
+                                    <div title={element.title}>
+                                        {element.displayTitle}
                                     </div>
                                 </Link>
                         ))
